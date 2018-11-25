@@ -3,7 +3,7 @@
         <h5 class="card-title">
             <a href="{{ path('property.show', {id: p.id, slug: p.slug}) }}">{{ p.title }}</a>
         </h5>
-        <p class="card-text">{{ p.city }} ({{ p.postalCode }})</p>
+        <p class="card-text">{{ p.surface }} m² - {{ p.city }} ({{ p.postalCode }})</p>
         <div class="text-primary" style="font-weight: bold; font-size: 2rem;">{{ p.formattedPrice }} €</div>
     </div>
 </div>

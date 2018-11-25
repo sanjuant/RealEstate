@@ -1,10 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Acheter un bien' %}
+{% block title 'Nos biens' %}
 
 {% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="form-row align-items-end">
+                <div class="col">
+                    {{ form_row(form.minSurface) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.maxPrice) }}
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <button class="btn btn-primary">Rechercher</button>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
     <div class="container">
-        <h1>Acheter un bien</h1>
+        <h1>Nos bien</h1>
         <div class="row">
             {% for p in properties %}
                 <div class="col-md-4">

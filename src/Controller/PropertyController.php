@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Entity\Property;
 use App\Entity\PropertySearch;
 use App\Form\ContactType;
+use App\Form\PropertySearchType;
 use App\Notification\ContactNotification;
 use App\Repository\PropertyRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -35,7 +36,7 @@ class PropertyController extends AbstractController
 	public function index(PaginatorInterface $paginator, Request $request): Response
 	{
 		$search = new PropertySearch();
-		$form = $this->createForm(ContactType::class, $search);
+		$form = $this->createForm(PropertySearchType::class, $search);
 		$form->handleRequest($request);
 
 		$properties = $paginator->paginate(

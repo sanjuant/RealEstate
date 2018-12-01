@@ -30,8 +30,8 @@
                     <div class="text-primary" style="font-weight: bold;font-size: 3rem;">
                         {{ property.formattedPrice }}€
                     </div>
-                    <a href="#" class="btn btn-primary">Contacter nous</a>
-                    <div id="contact-form" class="mt-4">
+                    <a href="#" id="contact-button" class="btn btn-primary"{% if form.vars.submitted %} style="display: none;"{% endif %}>Contacter nous</a>
+                    <div id="contact-form" class="mt-4"{% if not form.vars.submitted %} style="display: none;"{% endif %}>
                         {{ form_start(form) }}
                         <div class="row">
                             <div class="col">{{ form_row(form.firstname) }}</div>

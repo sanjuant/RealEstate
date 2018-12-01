@@ -19,14 +19,14 @@ class PropertySearchType extends AbstractType
 				'required' => false,
 				'label' => false,
 				'attr' => [
-					'placeholder' => 'Surface minimale'
+					'placeholder' => 'minSurface'
 				]
 			])
 			->add('maxPrice', IntegerType::class, [
 				'required' => false,
 				'label' => false,
 				'attr' => [
-					'placeholder' => 'Budget maximum'
+					'placeholder' => 'maxPrice'
 				]
 			])
 			->add('options', EntityType::class, [

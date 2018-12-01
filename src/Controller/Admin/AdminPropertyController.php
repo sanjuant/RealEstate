@@ -82,6 +82,10 @@ class AdminPropertyController extends AbstractController
 			return $this->redirectToRoute('admin.property.index');
 		}
 
+		if ($form->isSubmitted() && !$form->isValid()) {
+			dump($property);
+		}
+
 		return $this->render('admin/property/edit.html.twig', [
 			'property' => $property,
 			'form' => $form->createView()

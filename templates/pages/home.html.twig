@@ -13,23 +13,8 @@
         <h2>Nos derniers biens</h2>
         <div class="row flex">
             {% for p in properties %}
-                <div class="col-3">
-                    <div class="card">
-                        {% if p.filename %}
-                            <img src="{{ vich_uploader_asset(p, 'imageFile') | imagine_filter('thumbnail') }}" alt="card-img-top" style="width: 100%;, height: auto;">
-                        {% else %}
-                            <img src="{{ '/images/properties/no-image.jpeg' | imagine_filter('thumbnail') }}" alt="card-img-top" style="width: 100%;, height: auto;">
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="{{ path('property.show', {id: p.id, slug: p.slug}) }}">{{ p.title }}</a>
-                            </h5>
-                            <p class="card-text">{{ p.city }} ({{ p.postalCode }})</p>
-                            <div class="text-primary" style="font-weight: bold; font-size: 2rem;">
-                                {{ p.formattedPrice }} €
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-3">
+                    {% include 'property/_property.html.twig' %}
                 </div>
             {% endfor %}
         </div>

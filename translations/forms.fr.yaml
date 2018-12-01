@@ -4,12 +4,14 @@ Surface: Surface
 Rooms: Pièces
 Bedrooms: Chambres
 Floor: Étage
+Picture files: Photos
 Price: Prix
 Heat: Chauffage
 City: Ville
 Address: Adresse
 Postal code: Code postal
 Sold: Vendu
+Options: Options
 Firstname: Prénom
 Lastname: Nom
 Phone: Téléphone
@@ -17,3 +19,5 @@ Email: Email
 Message: Message
 minSurface: Surface minimale
 maxPrice: Budget maximum
+Electric: Électrique
+Gaz: Gaz

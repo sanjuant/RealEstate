@@ -32,8 +32,9 @@ class PropertyType extends AbstractType
 				'multiple' => true,
 				'required' => false
 			])
-			->add('imageFile', FileType::class, [
-				'required' => false
+			->add('pictureFiles', FileType::class, [
+				'required' => false,
+				'multiple' => true
 			])
 			->add('city')
 			->add('address')
@@ -44,12 +45,7 @@ class PropertyType extends AbstractType
 
 	private function getChoices(): array
 	{
-		$choices = Property::HEAT;
-		$output = [];
-		foreach ($choices as $k => $v) {
-			$output[$v] = $k;
-		}
-		return $output;
+		return array_flip(Property::HEAT);
 	}
 
 	public function configureOptions(OptionsResolver $resolver): void

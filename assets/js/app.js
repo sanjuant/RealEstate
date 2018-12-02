@@ -28,8 +28,10 @@ if (searchLocation !== null) {
         container: searchLocation
     });
     place.on('change', e => {
-        document.querySelector('#lat').value = e.suggestion.latlng.lat;
-        document.querySelector('#lng').value = e.suggestion.latlng.lng
+        document.querySelector('#search_city').value = e.suggestion.city;
+        document.querySelector('#search_postal_code').value = e.suggestion.postcode;
+        document.querySelector('#search_lat').value = e.suggestion.latlng.lat;
+        document.querySelector('#search_lng').value = e.suggestion.latlng.lng
     })
 }
 
@@ -37,7 +39,10 @@ let $ = require('jquery');
 
 $('[data-slider]').slick({
     dots: true,
-    arrows: true
+    arrows: true,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 7000
 });
 $('select').selectize();
 

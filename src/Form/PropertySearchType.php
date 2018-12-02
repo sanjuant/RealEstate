@@ -65,6 +65,8 @@ class PropertySearchType extends AbstractType
 					'placeholder' => 'distance'
 				]
 			])
+			->add('city', HiddenType::class)
+			->add('postal_code', HiddenType::class)
 			->add('lat', HiddenType::class)
 			->add('lng', HiddenType::class)
 		;

@@ -16,7 +16,7 @@ export default class Map {
         let token = 'pk.eyJ1Ijoic29ycm93ODEiLCJhIjoiY2pwNnVmNTk0MTVhbTNrcWYydzNiYXViYyJ9.iikA8tm-Pu4tT68onhhkrg';
         L.tileLayer(`https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${token}`, {
             maxZoom: 18,
-            minZoom: 10,
+            minZoom: 6,
             attribution: ' © <a href=\'https://www.mapbox.com/about/maps/\'>Mapbox</a> © <a href=\'http://www.openstreetmap.org/copyright\'>OpenStreetMap</a> <strong><a href=\'https://www.mapbox.com/map-feedback/\' target=\'_blank\'>Improve this map</a></strong>'
         }).addTo(map);
         L.marker(center,{icon: icon}).addTo(map);

@@ -34,6 +34,16 @@ class PropertySearch
 	private $distance;
 
 	/**
+	 * @var string|null
+	 */
+	private $city;
+
+	/**
+	 * @var string|null
+	 */
+	private $postal_code;
+
+	/**
 	 * @var float|null
 	 */
 	private $lat;
@@ -102,6 +112,25 @@ class PropertySearch
 		return $this;
 	}
 
+
+	/**
+	 * @return string|null
+	 */
+	public function getLocation(): ?string
+	{
+		return $this->location;
+	}
+
+	/**
+	 * @param string|null $location
+	 * @return PropertySearch
+	 */
+	public function setLocation(?string $location): PropertySearch
+	{
+		$this->location = $location;
+		return $this;
+	}
+
 	/**
 	 * @return int|null
 	 */
@@ -117,6 +146,42 @@ class PropertySearch
 	public function setDistance(?int $distance): PropertySearch
 	{
 		$this->distance = $distance;
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getCity(): ?string
+	{
+		return $this->city;
+	}
+
+	/**
+	 * @param string|null $city
+	 * @return PropertySearch
+	 */
+	public function setCity(?string $city): PropertySearch
+	{
+		$this->city = $city;
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getPostalCode(): ?string
+	{
+		return $this->postal_code;
+	}
+
+	/**
+	 * @param string|null $postal_code
+	 * @return PropertySearch
+	 */
+	public function setPostalCode(?string $postal_code): PropertySearch
+	{
+		$this->postal_code = $postal_code;
 		return $this;
 	}
 
@@ -153,24 +218,6 @@ class PropertySearch
 	public function setLng(?float $lng): PropertySearch
 	{
 		$this->lng = $lng;
-		return $this;
-	}
-
-	/**
-	 * @return string|null
-	 */
-	public function getLocation(): ?string
-	{
-		return $this->location;
-	}
-
-	/**
-	 * @param string|null $location
-	 * @return PropertySearch
-	 */
-	public function setLocation(?string $location): PropertySearch
-	{
-		$this->location = $location;
 		return $this;
 	}
 }

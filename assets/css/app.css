@@ -1,0 +1,8 @@
+/* slick: dots and arrows color */
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before
+{
+    color: #007bff !important;
+}

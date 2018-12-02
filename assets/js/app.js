@@ -1,16 +1,45 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
+import Places from 'places.js';
+import Map from './modules/map';
+import 'slick-carousel';
+import 'selectize.js';
+import '../css/app.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import '../css/selectize.bootstrap4.css';
 
-// any CSS you require will output into a single css file (app.css in this case)
+Map.init();
+
+let inputAddress = document.querySelector('#property_address');
+if (inputAddress !== null) {
+    let place = Places({
+        container: inputAddress
+    });
+    place.on('change', e => {
+        document.querySelector('#property_city').value = e.suggestion.city;
+        document.querySelector('#property_postal_code').value = e.suggestion.postcode;
+        document.querySelector('#property_lat').value = e.suggestion.latlng.lat;
+        document.querySelector('#property_lng').value = e.suggestion.latlng.lng
+    })
+}
+
+let searchLocation = document.querySelector('#search_location');
+if (searchLocation !== null) {
+    let place = Places({
+        container: searchLocation
+    });
+    place.on('change', e => {
+        document.querySelector('#lat').value = e.suggestion.latlng.lat;
+        document.querySelector('#lng').value = e.suggestion.latlng.lng
+    })
+}
+
 let $ = require('jquery');
-require('../css/app.css');
-require('select2');
 
-$('select').select2();
+$('[data-slider]').slick({
+    dots: true,
+    arrows: true
+});
+$('select').selectize();
 
 let $contactButton = $('#contact-button');
 $contactButton.click(e => {

@@ -18,11 +18,15 @@
             {% endif %}
             <div class="row">
                 <div class="col-md-8">
-{#                    {% if property.filename %}
-                        <img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%;, height: auto;">
+                    <div data-slider>
+                    {% if property.pictures is empty %}
+                        <img src="{{ '/images/no-image.jpeg' | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%;, max-height: auto;">
                     {% else %}
-                        <img src="{{ '/images/properties/no-image.jpeg' | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%;, height: auto;">
-                    {% endif %}#}
+                        {% for picture in property.pictures %}
+                        <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%;, height: auto;">
+                        {% endfor %}
+                    {% endif %}
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <h1>{{ property.title }}</h1>
@@ -84,11 +88,15 @@
             <div class="col-md-4">
                 <h2>Spécificités</h2>
                 <ul class="list-group">
+                    {% if property.options | length == 0 %}
+                    <li class="list-group-item list-group-item-info">Aucunes options</li>
+                    {% endif %}
                     {% for key, option in property.options %}
-                        <li class="list-group-item {{ key%2 == 0 ? 'list-group-item-info':'' }}">{{ option.name }}</li>
+                    <li class="list-group-item {{ key%2 == 0 ? 'list-group-item-info':'' }}">{{ option.name }}</li>
                     {% endfor %}
                 </ul>﻿
             </div>
         </div>
+        <div id="map" style="width: 100%; height: 400px;" data-lat="{{ property.lat }}" data-lng="{{ property.lng }}"></div>
     </div>
 {% endblock %}

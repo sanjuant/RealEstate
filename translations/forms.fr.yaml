@@ -1,3 +1,4 @@
+# Property Form
 Title: Titre
 Description: Description
 Surface: Surface
@@ -12,12 +13,26 @@ Address: Adresse
 Postal code: Code postal
 Sold: Vendu
 Options: Options
+Electric: Électrique
+Gaz: Gaz
+
+# Search Form
+minSurface: Surface minimale
+maxPrice: Budget maximum
+location: Localisation
+distance: Distance
+options: Options
+5: 5 km
+10: 10 km
+20: 20 km
+30: 30 km
+50: 50 km
+100: 100 km
+500: 500 km
+
+# Contact Form
 Firstname: Prénom
 Lastname: Nom
 Phone: Téléphone
 Email: Email
 Message: Message
-minSurface: Surface minimale
-maxPrice: Budget maximum
-Electric: Électrique
-Gaz: Gaz

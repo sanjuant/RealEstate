@@ -1,4 +1,3 @@
-// import Places from 'places.js';
 import Map from './modules/map';
 import Places from './modules/places';
 import 'slick-carousel';

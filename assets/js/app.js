@@ -1,5 +1,6 @@
-import Places from 'places.js';
+// import Places from 'places.js';
 import Map from './modules/map';
+import Places from './modules/places';
 import 'slick-carousel';
 import 'selectize.js';
 import '../css/app.css';
@@ -8,32 +9,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import '../css/selectize.bootstrap4.css';
 
 Map.init();
-
-let inputAddress = document.querySelector('#property_address');
-if (inputAddress !== null) {
-    let place = Places({
-        container: inputAddress
-    });
-    place.on('change', e => {
-        document.querySelector('#property_city').value = e.suggestion.city;
-        document.querySelector('#property_postal_code').value = e.suggestion.postcode;
-        document.querySelector('#property_lat').value = e.suggestion.latlng.lat;
-        document.querySelector('#property_lng').value = e.suggestion.latlng.lng
-    })
-}
-
-let searchLocation = document.querySelector('#search_location');
-if (searchLocation !== null) {
-    let place = Places({
-        container: searchLocation
-    });
-    place.on('change', e => {
-        document.querySelector('#search_city').value = e.suggestion.city;
-        document.querySelector('#search_postal_code').value = e.suggestion.postcode;
-        document.querySelector('#search_lat').value = e.suggestion.latlng.lat;
-        document.querySelector('#search_lng').value = e.suggestion.latlng.lng
-    })
-}
+Places.init('search');
+Places.init('property');
 
 let $ = require('jquery');
 

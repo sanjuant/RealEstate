@@ -8,8 +8,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import '../css/selectize.bootstrap4.css';
 
 Map.init();
-Places.init('search');
-Places.init('property');
+Places.init('search', 'location');
+Places.init('property', 'address');
 
 let $ = require('jquery');
 

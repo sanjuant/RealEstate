@@ -16,7 +16,7 @@ liip_imagine:
                     size: [800, 530]
                     position: center
                     color: '#e9ecef'
-#                watermark:
-#                    image: '../public/images/watermark.png'
-#                    size: 0.2
-#                    position: bottomright
+                watermark:
+                    image: '../public/images/watermark.png'
+                    size: 0.2
+                    position: bottomright

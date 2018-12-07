@@ -116,6 +116,11 @@ class Property
 	private $pictures;
 
 	/**
+	 * @var Picture|null
+	 */
+	private $picture;
+
+	/**
 	 * @Assert\All({
 	 * 		@Assert\Image(mimeTypes="image/jpeg"),
 	 * 		@Assert\File(maxSize="2M")
@@ -370,10 +375,13 @@ class Property
 
 	public function getPicture(): ?Picture
 	{
-		if ($this->pictures->isEmpty()) {
-			return null;
-		}
-		return $this->pictures->first();
+		return $this->picture;
+	}
+
+	public function setPicture(Picture $picture): self
+	{
+		$this->picture = $picture;
+		return $this;
 	}
 
 	public function removePicture(Picture $picture): self

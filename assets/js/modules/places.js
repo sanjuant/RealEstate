@@ -2,8 +2,8 @@ import P from 'places.js';
 
 export default class Places {
 
-    static init(prefix) {
-        let inputAddress = document.querySelector(`#${prefix}_address`);
+    static init(prefix, field) {
+        let inputAddress = document.querySelector(`#${prefix}_${field}`);
         if (inputAddress !== null) {
             let place = P({
                 container: inputAddress
